@@ -1,0 +1,20 @@
+{
+  "descriptions": [
+    {
+      "datatype": "anat",
+      "suffix": "T1w",
+      "custom_entities": "desc-rec0100",
+      "criteria": {
+        "SeriesDescription": "MEAN_10_12_14_16"
+      }
+    },               
+    {
+      "datatype": "func",
+      "suffix": "bold",
+      "criteria": {
+        "SeriesDescription": "mpi_ep2d_bold_96FoV_ip2_1.2iso_304_-90deg"
+      }
+    }     
+  ]
+}
+

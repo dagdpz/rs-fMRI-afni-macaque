@@ -1,0 +1,83 @@
+{
+  "descriptions": [
+    {
+      "datatype": "anat",
+      "suffix": "T1w",
+      "custom_entities": "desc-mac1003rec0101",
+      "criteria": {
+        "SeriesDescription": "MEAN_2_4_6"
+      }
+    },
+    {
+      "datatype": "anat",
+      "suffix": "T1w",
+      "custom_entities": "desc-mac1003rec0102",
+      "criteria": {
+        "SeriesDescription": "MEAN_3_5_7"
+      }
+    },
+    {
+      "datatype": "anat",
+      "suffix": "T2w",
+      "custom_entities": "desc-mac1003rec0100",
+      "criteria": {
+        "BidsGuess": ["derived","_acq-tse2_run-100_PDw"]
+      }
+    },
+    {
+      "datatype": "anat",
+      "suffix": "inplaneT2",
+      "custom_entities": "desc-mac1004rec0002",
+      "criteria": {
+        "CoilString": "Rx5"
+      }
+    },
+    {
+      "datatype": "anat",
+      "suffix": "inplaneT2",
+      "custom_entities": "desc-mac1004-0003",
+      "criteria": {
+        "SeriesDescription": "pd_tse_inplane_96FoV_43sl_1.2_uncombined",
+        "SeriesNumber": 3
+      }
+    },                 
+    {
+      "datatype": "func",
+      "suffix": "bold",
+      "criteria": {
+        "SeriesDescription": "ep2d_bold_1.2x1.2x1.2"
+      }
+    },
+    {
+      "datatype": "fmap",
+      "suffix": "epi",
+      "custom_entities": "desc-magnitude1",
+      "criteria": {
+        "SeriesDescription": "B0_Map_PAT2_Hor_1.2x1.2x2.4",
+        "SeriesNumber": 5,
+        "AcquisitionTime": "10:37:19.417500"
+      }
+    },
+    {
+      "datatype": "fmap",
+      "suffix": "epi",
+      "custom_entities": "desc-magnitude2",
+      "criteria": {
+        "SeriesDescription": "B0_Map_PAT2_Hor_1.2x1.2x2.4",
+        "SeriesNumber": 5,
+        "AcquisitionTime": "10:37:20.120000"
+      }
+    },
+    {
+      "datatype": "fmap",
+      "suffix": "epi",
+      "custom_entities": "desc-phasediff",
+      "criteria": {
+        "SeriesDescription": "B0_Map_PAT2_Hor_1.2x1.2x2.4",
+        "SeriesNumber": 6,
+        "AcquisitionTime": "10:37:20.120000"
+      }
+    }      
+  ]
+}
+

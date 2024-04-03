@@ -1,0 +1,61 @@
+{
+  "descriptions": [
+    {
+      "datatype": "anat",
+      "suffix": "T1w",
+      "custom_entities": "desc-mac1003rec0101",
+      "criteria": {
+        "SeriesDescription": "MEAN_2_4_6"
+      }
+    },
+    {
+      "datatype": "anat",
+      "suffix": "T1w",
+      "custom_entities": "desc-mac1003rec0102",
+      "criteria": {
+        "SeriesDescription": "MEAN_3_5_7"
+      }
+    },
+    {
+      "datatype": "anat",
+      "suffix": "T1w",
+      "custom_entities": "desc-mac1005rec0004",
+      "criteria": {
+        "AcquisitionTime": "12:16:11.960000"
+      }
+    },
+    {
+      "datatype": "anat",
+      "suffix": "T2w",
+      "custom_entities": "desc-mac1003rec0100",
+      "criteria": {
+        "BidsGuess": ["derived","_acq-tse2_run-100_PDw"]
+      }
+    },
+    {
+      "datatype": "anat",
+      "suffix": "inplaneT2",
+      "custom_entities": "desc-mac1004rec0002",
+      "criteria": {
+        "CoilString": "Rx5"
+      }
+    },
+    {
+      "datatype": "anat",
+      "suffix": "inplaneT2",
+      "custom_entities": "desc-mac1004rec0003",
+      "criteria": {
+        "SeriesDescription": "pd_tse_inplane_96FoV_43sl_1.2_uncombined",
+        "SeriesNumber": 3
+      }
+    },           
+    {
+      "datatype": "func",
+      "suffix": "bold",
+      "criteria": {
+        "SeriesDescription": "ep2d_bold_1.2x1.2x1.2"
+      }
+    }    
+  ]
+}
+
