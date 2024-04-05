@@ -43,12 +43,13 @@ run_22_ap_roi.tcsh: 		loops do_22_ap_roi over subjects and sessions
 do_30_pp_roi.tcsh: 		creates correlation matrix and plots of the roi-based analysis using 3dnetcorr and others
 run_30_pp_roi.tcsh: 		loops do_30_pp_roi over subjects and sessions 
 
-run_all.tcsh: 			assumes that you have a json config file for the dcm2bids sctructure and runs all steps there:
-				- dcm2bids
+run_all.tcsh: 			assumes that you have a dcm2bids sctructure and runs all steps there:
 				- reorient_flipped_LIP_to_LPI
 				- all run_* scripts 
 	
 dcm2bids_scaffold_helper.tcsh: creates bids scaffold and helper files to write your config file. Three examplary config files are provided.
+
+dcm2bids_conv:			an exmaple of a dcm2bids command which creates the bids structure and then moves the bids directory to the data_basic folder where the analysis with the run_* scripts 					continues
 
 In case you do not want to run all scripts, you can run them seperately with the dcm2bids package to convert DICOMs to NIFTI and with the run_* scripts. To run tcsh scripts type (e.g.) the following into the terminal: tcsh run_13_aw.tcsh
 
@@ -59,10 +60,12 @@ How to get started is explained here: https://unfmontreal.github.io/Dcm2Bids/3.1
 
 But to give a brief overview:
 - !Use '-h' as an options for the commands to view all options and their explanations!
-- first run 'dcm2bids_scaffold', this command will create empty folders for the bids structure such as code (for the config file zou will create later), sourcedata, etc.
-- move your DICOM data into the sourcedata folder
-- run 'dcm2bids_helper', this command creates json files that you can extract information from to create a config file. This step has to be done manually as you need to find unique identifiers for the        different NIFTI files you want to create. Three examplary config files are provided and labeled according to their corresponding data
-- after you manually created your config file, you run 'dcm2bids' where you specify the created config file among others. this command creates the final bids structure in the directory you specified and converts the Dicom files to NIFTI files
+- first run 'dcm2bids_scaffold', this command will create empty folders for the bids structure such as code (for the config file you will create later), sourcedata, etc.
+- move your DICOM data into the sourcedata folder; it is fine to copy entire directories, does not need to be raw unordered dicoms 
+- run 'dcm2bids_helper', this command creates json files that you can extract information from to create a config file. This step has to be done manually as you need to find unique identifiers for 
+  the different NIFTI files you want to create. Three examplary config files are provided and labeled according to their corresponding data
+- after you manually created your config file, you run 'dcm2bids' where you specify the created config file among others. this command creates the final bids structure in the directory you specified
+  and converts the Dicom files to NIFTI files
 
 The script 'dcm2bids_scaffold_helper.tcsh' runs dcm2bids_scaffold and dcm2bids_helper. the script 'dcm2bids_conv' is an exmaple of a dcm2bids command which creates the bids structure and then moves the bids directory to the data_basic folder where the analysis with the run_* scripts continues.
 
@@ -79,6 +82,7 @@ Instructions with Linus20230704 as an example
 
 - Copy the 'scripts' folder from github: rs-fMRI-afni-macaque
 - run the script 'dcm2bids_scaffold_helper.tcsh'
+- put dicom data into the 'sourcedata' directory
 - put the config file into the /bids_structure/code (in case of Linus20230704 you need one config file for every session, hence why there are two config files for that dataset)
 - run 'dcm2bids_conv'
 - copy the NMT_v2.1_sym folder into the dircetory one above scripts 
