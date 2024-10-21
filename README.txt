@@ -47,7 +47,9 @@ run_all.tcsh: 			assumes that you have a dcm2bids structure and runs all steps t
 				- reorient_flipped_LIP_to_LPI
 				- all run_* scripts 
 	
-dcm2bids_scaffold_helper.tcsh: creates bids scaffold and helper files to write your config file. Three exemplary config files are provided.
+dcm2bids_scaffold_helper.tcsh: creates bids scaffold and helper files to write your config file. Three exemplary config files are provided:
+https://github.com/dagdpz/rs-fMRI-afni-macaque/tree/master/scripts_ordered/dcm2bids_config_files
+
 
 dcm2bids_conv:			an example of a dcm2bids command which creates the bids structure and then moves the bids directory to the data_basic folder where the analysis with the run_* scripts continues
 
