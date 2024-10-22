@@ -4,7 +4,7 @@ Resting state fMRI analysis using MACAQUE_DEMO in AFNI
 Initial version by Pascal G.
 Further developed by Tabea B.
 
-based on README.txt
+_Based on README.txt by Pascal G._
 
 ## Data
 The data used with these scripts is from Linus_20230704. They are resting state recordings of an anesthetized monkey that were separated into two sessions (predrug and postdrug). 
