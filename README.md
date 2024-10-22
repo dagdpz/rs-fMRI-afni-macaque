@@ -15,7 +15,7 @@ mac_1003:			contains anatomical scans, 0101_T1w and 0102_T1w. T1w was used for s
 mac_1004:			functional runs before drug injection (runs 1-6)
 mac_1005:			functional runs after drug injection (runs 7-10)
 
-MRI folder structure
+### MRI folder structure
 Everything can be found in the /MRI folder. 
 Archive: 			failed attempts, old versions, etc. These files serve no purpose anymore
 data: 				original dicom files, unedited nifti files in bids-structure
@@ -27,9 +27,11 @@ Tests:				Testing certain things such as new scripts or modifications of already
 
 ## Scripts
 
-The two folders provided in github (scripts, scripts_ordered) contain the same files, but the 'scripts' folder can be copied like it is to start the data analysis for your dataset, no structural changes need to be made to this directory. the 'scripts_ordered' directory is ordered more intuetively but would need to be structured in the same way as 'scripts' to work for data analysis. Additionally, 'scripts_ordered' contains .json config files for dcm2bids and .ipynb scripts for further data analysis such as creating histograms of correlation coefficients for visualization and for statistical tests.
+The two folders provided in github (scripts, scripts_ordered) contain the same files, but the 'scripts' folder can be copied like it is to start the data analysis for your dataset, no structural changes need to be made to this directory. 
 
-the do_* and run_* scripts were provided by the MACAQUE_DEMO from the AFNI docs and were modified to suit our data.
+The 'scripts_ordered' directory is ordered more intuitevely  but would need to be structured in the same way as 'scripts' to work for data analysis. Additionally, 'scripts_ordered' contains **.json config files** for dcm2bids and .ipynb scripts for further data analysis such as creating histograms of correlation coefficients for visualization and for statistical tests.
+
+The do_* and run_* scripts were provided by the MACAQUE_DEMO from the AFNI docs and were modified to suit our data.
 The scripts provided are used to analyze the dataset of Linus_20230704. Modify the path variables in the script to be suitable for your analysis.
 
 All scripts were made to be run from the /scripts directory (exemplary structure in the MACAQUE_DEMO), meaning they should all (except for the .json files) be in one folder without other subdirectories. For that you can just copy the 'scripts' folder from github. If you want to use the provided .json files as config files for dcm2bids, move them into the /code directory created by dcm2bids_scaffold (described in dcm2bids).
