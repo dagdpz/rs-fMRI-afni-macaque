@@ -59,7 +59,7 @@ d) Running script
 
 This example is based on the data of this tutorial: https://unfmontreal.github.io/Dcm2Bids/3.1.1/tutorial/first-steps/
 
-When I ran script, this is the output; words which are surrounded with '*' were inserted by myself via standard input:
+When I ran script, this is the output; words which I surrounded afterwards with '*' were inserted by myself via standard input:
 
 ```
 The script will proceed through the following steps to ensure you know where potential issues may arise:
