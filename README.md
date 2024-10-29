@@ -72,8 +72,8 @@ The script will proceed through the following steps to ensure you know where pot
    
 Please enter the name of the folder containing your DICOM data:
 *In*
- This pathway is used in the following: /home/path/to/DICOMs/In 
- Please make sure that this is really the pathway which should be used (you can abort script by 'Ctrl C')
+This pathway is used in the following: /home/path/to/DICOMs/In 
+Please make sure that this is really the pathway which should be used (you can abort script by 'Ctrl C')
 Please enter the subject ID:
 *ID01*
 Please enter the session name:
