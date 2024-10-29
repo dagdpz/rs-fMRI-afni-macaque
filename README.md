@@ -1,103 +1,188 @@
 # rs-fMRI-afni-macaque
 Resting state fMRI analysis using MACAQUE_DEMO in AFNI
 
-Initial version by Pascal G.
+Initial version by Pascal G. (deleted by Tabea B and replaced with Tabea B. version)
 Further developed by Tabea B.
 
-_Based on README.txt by Pascal G._
+# **dcm2bids_convertingTB.tcsh**
 
-## Data
-The data used with these scripts is from Linus_20230704. They are resting state recordings of an anesthetized monkey that were separated into two sessions (predrug and postdrug). 
+## Description:
+
+a) Usage of this script
+
+This script is made to convert DICOMS to BIDS format to use them further in other programs. It is made so that the user only have to run this script once and the user got commands via the standard input and should insert something via standard input.
+
+b) Data
+
+The data used with these scripts is from the German Primate Center (DAG, Pinocchio/Linus). They are resting state recordings of an anesthetized monkey that were separated into two sessions (predrug and postdrug). 
 A drug was applied to inhibit the resting state activity of the pulvinar in the right hemisphere. With these scripts we determined if there is a difference 
 in the resting state activity of the whole brain when comparing the two different conditions.
 
-mac_1003:			contains anatomical scans, 0101_T1w and 0102_T1w. T1w was used for skull-stripping and alignment to EPI for Linus20230704
-mac_1004:			functional runs before drug injection (runs 1-6)
-mac_1005:			functional runs after drug injection (runs 7-10)
+## Installation
 
-### MRI folder structure
-Everything can be found in the /MRI folder. 
-Archive: 			failed attempts, old versions, etc. These files serve no purpose anymore
-data: 				original dicom files, unedited nifti files in bids-structure
-Linus_analysis: 		analyzed data from Linus (recordings from 20230704 and 20131015) with and without smoothing
-MACAQUE_DEMO:			the analyzed macaque demo provided by AFNI, the unmodified do_* and run_* scripts are also here 
-Tests:				Testing certain things such as new scripts or modifications of already existing ones 
+To run this script you have to make sure that you installed the following programs (instructions are for linux):
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+a) install 'Anaconda' (source: https://www.hostinger.com/tutorials/how-to-install-anaconda-on-ubuntu/)
 
-## Scripts
+    1) sudo apt-get update
+    2) apt-get install wget
+    3) wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
+    4) sha256sum Anaconda3-2022.05-Linux-x86_64.sh
+    5) bash Anaconda3-2022.05-Linux-x86_64.sh
 
-The two folders provided in github (scripts, scripts_ordered) contain the same files, but the 'scripts' folder can be copied like it is to start the data analysis for your dataset, no structural changes need to be made to this directory. 
+b) dcm2bids and dcm2niix with conda. You have to create an environment called "dcm2bids" in which you install dcm2bids and dcm2niix. Running the script, you have to be in this environment.
 
-The 'scripts_ordered' directory is ordered more intuitevely  but would need to be structured in the same way as 'scripts' to work for data analysis. Additionally, 'scripts_ordered' contains **.json config files** for dcm2bids and .ipynb scripts for further data analysis such as creating histograms of correlation coefficients for visualization and for statistical tests.
+    1) conda create --name dcm2bids python=3.8
+    2) conda activate dcm2bids
+    3) conda install -c conda-forge dcm2niix
+    4) conda install -c conda-forge dcm2bids
+    
+c) Put script in your current environment
+ 
+    1) sudo cp /path/to/your/script.sh /usr/local/bin
+    2) chmod +x /path/to/your/script.sh
+    3) run with tcsh script.tcsh
+    
+d) copy folder with DICOM data into home directory
 
-The do_* and run_* scripts were provided by the MACAQUE_DEMO from the AFNI docs and were modified to suit our data.
-The scripts provided are used to analyze the dataset of Linus_20230704. Modify the path variables in the script to be suitable for your analysis.
+    1) cp /path/to/DICOMs /home/directory
 
-All scripts were made to be run from the /scripts directory (exemplary structure in the MACAQUE_DEMO), meaning they should all (except for the .json files) be in one folder without other subdirectories. For that you can just copy the 'scripts' folder from github. If you want to use the provided .json files as config files for dcm2bids, move them into the /code directory created by dcm2bids_scaffold (described in dcm2bids).
+d) Running script
 
-A custom tcsh script was written to automate the process of correctly orienting anatomical and EPI recordings. 
-Python scripts were written for further analysis and validation of the results. 
+* to run this script you have to be in the dcm2bids environment which you activate by command 'conda activate dcm2bids' and you have to be in pathway of folder where you want the bidsified data to be (cd path/to/folder).
+* run it with command 'tcsh dcm2bids_convertingTB.tcsh'
 
-do_13_aw.tcsh: 		runs animal warper to perform alignment of subject to template and skull-stripping
-run_13_aw.tcsh: 		loops do_13_aw over subjects and sessions 
+## Examples
 
-do_20_ap_vox: 			uses afni_proc.py to align EPI recordings to skull-stripped anatomical in a voxelwise manner
-run_20_ap_vox.tcsh: 		loops do_20_ap_vox over subjects and sessions 
+this example is based on the data of this tutorial: https://unfmontreal.github.io/Dcm2Bids/3.1.1/tutorial/first-steps/
 
-do_22_ap_roi.tcsh: 		uses afni_proc.py to align EPI recordings to skull-stripped anatomical in a roi-based manner
-run_22_ap_roi.tcsh: 		loops do_22_ap_roi over subjects and sessions 
+when I ran script, this is the output; words which are surrounded with '*' were inserted by myself via standard input:
 
-do_30_pp_roi.tcsh: 		creates correlation matrix and plots of the roi-based analysis using 3dnetcorr and others
-run_30_pp_roi.tcsh: 		loops do_30_pp_roi over subjects and sessions 
+```
+The script will proceed through the following steps to ensure you know where potential issues may arise:
+(1) Creation of the initial folder structure and scaffold
+(2) Generation of sidecar files in the 'helper' folder
+(3) Moving the configuration file in the 'code' folder-demand you to do it manually
+(4) Conversion of DICOM files to BIDS format
+(5) Demonstration of the BIDS directory structure
+   
+   
+Please enter the name of the folder containing your DICOM data:
+*In*
+ This pathway is used in the following: /home/path/to/DICOMs/In 
+ Please make sure that this is really the pathway which should be used (you can abort script by 'Ctrl C')
+Please enter the subject ID:
+*ID01*
+Please enter the session name:
+*examplesession*
+(1/5) Creating the initial folder structure and the scaffold with dcm2bids_scaffold
+INFO    | --- dcm2bids_scaffold start ---
+INFO    | Running the following command: /home/tabea/anaconda3/envs/dcm2bids/bin/dcm2bids_scaffold --force
+INFO    | OS version: Linux-5.15.0-124-generic-x86_64-with-glibc2.31
+INFO    | Python version: 3.9.20 (main, Oct  3 2024, 07:27:41) [GCC 11.2.0]
+INFO    | dcm2bids version: 3.2.0
+INFO    | Checking for software update
+INFO    | Currently using the latest version of dcm2bids.
+INFO    | The files used to create your BIDS directory were taken from https://github.com/bids-standard/bids-starter-kit. 
 
-run_all.tcsh: 			assumes that you have a dcm2bids structure and runs all steps there:
-				- reorient_flipped_LIP_to_LPI
-				- all run_* scripts 
-	
-dcm2bids_scaffold_helper.tcsh: creates bids scaffold and helper files to write your config file. Three exemplary config files are provided:
-https://github.com/dagdpz/rs-fMRI-afni-macaque/tree/master/scripts_ordered/dcm2bids_config_files
+INFO    | Tree representation of /home/tabea/dcm2bids-tutorial/test_script_TB/
+INFO    | /home/tabea/dcm2bids-tutorial/test_script_TB/
+INFO    | ├── code/
+INFO    | ├── derivatives/
+INFO    | ├── sourcedata/
+INFO    | ├── tmp_dcm2bids/
+INFO    | │   └── log/
+INFO    | │       └── scaffold_20241028-124926.log
+INFO    | ├── .bidsignore
+INFO    | ├── CHANGES
+INFO    | ├── dataset_description.json
+INFO    | ├── participants.json
+INFO    | ├── participants.tsv
+INFO    | └── README
+INFO    | Log file saved at /home/tabea/dcm2bids-tutorial/test_script_TB/tmp_dcm2bids/log/scaffold_20241028-124926.log
+INFO    | --- dcm2bids_scaffold end ---
+(2/5) Generating sidecar files in the 'helper' folder with dcm2bids_helper
+INFO    | --- dcm2bids_helper start ---
+INFO    | Running the following command: /home/tabea/anaconda3/envs/dcm2bids/bin/dcm2bids_helper -d /home/tabea/dcm2bids-tutorial/right_output/sourcedata/dcm_qa_nih/In
+INFO    | OS version: Linux-5.15.0-124-generic-x86_64-with-glibc2.31
+INFO    | Python version: 3.9.20 (main, Oct  3 2024, 07:27:41) [GCC 11.2.0]
+INFO    | dcm2bids version: 3.2.0
+INFO    | dcm2niix version: v1.0.20240202
+INFO    | Checking for software update
+INFO    | Currently using the latest version of dcm2bids.
+INFO    | Currently using the latest version of dcm2niix.
+INFO    | Running: dcm2niix -b y -ba y -z y -f %3s_%f_%p_%t -o /home/tabea/dcm2bids-tutorial/test_script_TB/tmp_dcm2bids/helper /home/tabea/dcm2bids-tutorial/right_output/sourcedata/dcm_qa_nih/In
+INFO    | Check log file for dcm2niix output
+
+INFO    | Helper files in: /home/tabea/dcm2bids-tutorial/test_script_TB/tmp_dcm2bids/helper
+
+INFO    | Log file saved at /home/tabea/dcm2bids-tutorial/test_script_TB/tmp_dcm2bids/log/helper_20241028-124930.log
+INFO    | --- dcm2bids_helper end ---
+
+Please add the configuration file to the 'code' folder.
+Once you have done that and want the code to continue, press 'y'.
+If you want to abort, press 'n'.
+*y*
+Continuing...
+Please enter the configuration file name:
+*dcm2bids_config.json*
+   
+(4/5)  Converting DICOM files to BIDS format using dcm2bids 
+INFO    | --- dcm2bids start ---
+INFO    | Running the following command: /home/tabea/anaconda3/envs/dcm2bids/bin/dcm2bids -d /home/tabea/dcm2bids-tutorial/right_output/sourcedata/dcm_qa_nih/In -p ID01 -s examplesession -c code/dcm2bids_config.json --auto_extract_entities
+INFO    | OS version: Linux-5.15.0-124-generic-x86_64-with-glibc2.31
+INFO    | Python version: 3.9.20 (main, Oct  3 2024, 07:27:41) [GCC 11.2.0]
+INFO    | dcm2bids version: 3.2.0
+INFO    | dcm2niix version: v1.0.20240202
+INFO    | Checking for software update
+INFO    | Currently using the latest version of dcm2bids.
+INFO    | Currently using the latest version of dcm2niix.
+INFO    | participant: sub-ID01
+INFO    | session: ses-examplesession
+INFO    | config: /home/tabea/dcm2bids-tutorial/test_script_TB/code/dcm2bids_config.json
+INFO    | BIDS directory: /home/tabea/dcm2bids-tutorial/test_script_TB
+INFO    | Auto extract entities: True
+INFO    | Reorder entities: True
+INFO    | Validate BIDS: False
+
+INFO    | Running: dcm2niix -b y -ba y -z y -f %3s_%f_%p_%t -o /home/tabea/dcm2bids-tutorial/test_script_TB/tmp_dcm2bids/sub-ID01_ses-examplesession /home/tabea/dcm2bids-tutorial/right_output/sourcedata/dcm_qa_nih/In
+INFO    | Check log file for dcm2niix output
+
+INFO    | SIDECAR PAIRING
+INFO    | sub-ID01_ses-examplesession_task-rest_bold  <-  004_In_DCM2NIIX_regression_test_20180918114023
+INFO    | No Pairing  <-  005_In_DCM2NIIX_regression_test_20180918114023
+INFO    | No Pairing  <-  006_In_DCM2NIIX_regression_test_20180918114023
+INFO    | No Pairing  <-  007_In_DCM2NIIX_regression_test_20180918114023
+INFO    | sub-ID01_ses-examplesession_dir-AP_epi  <-  003_In_EPI_PE=AP_20180918121230
+INFO    | sub-ID01_ses-examplesession_dir-PA_epi  <-  004_In_EPI_PE=PA_20180918121230
+INFO    | sub-ID01_ses-examplesession_dir-RL_epi  <-  005_In_EPI_PE=RL_20180918121230
+INFO    | sub-ID01_ses-examplesession_dir-LR_epi  <-  006_In_EPI_PE=LR_20180918121230
+INFO    | Moving acquisitions into BIDS folder "/home/tabea/dcm2bids-tutorial/test_script_TB/sub-ID01/ses-examplesession".
+
+INFO    | Logs saved in /home/tabea/dcm2bids-tutorial/test_script_TB/tmp_dcm2bids/log/sub-ID01_ses-examplesession_20241028-125005.log
+INFO    | --- dcm2bids end ---
+(5/5) Demonstrating the BIDS directory structure to verify the results
+sub-ID01/
+└── ses-examplesession
+    ├── fmap
+    │   ├── sub-ID01_ses-examplesession_dir-AP_epi.json
+    │   ├── sub-ID01_ses-examplesession_dir-AP_epi.nii.gz
+    │   ├── sub-ID01_ses-examplesession_dir-LR_epi.json
+    │   ├── sub-ID01_ses-examplesession_dir-LR_epi.nii.gz
+    │   ├── sub-ID01_ses-examplesession_dir-PA_epi.json
+    │   ├── sub-ID01_ses-examplesession_dir-PA_epi.nii.gz
+    │   ├── sub-ID01_ses-examplesession_dir-RL_epi.json
+    │   └── sub-ID01_ses-examplesession_dir-RL_epi.nii.gz
+    └── func
+        ├── sub-ID01_ses-examplesession_task-rest_bold.json
+        └── sub-ID01_ses-examplesession_task-rest_bold.nii.gz
+```
+
+## Author
+
+* Tabea Bruening
+* German Primate Center/DAG
 
 
-dcm2bids_conv:			an example of a dcm2bids command which creates the bids structure and then moves the bids directory to the data_basic folder where the analysis with the run_* scripts continues
 
-In case you do not want to run all scripts, you can run them separately with the dcm2bids package to convert DICOMs to NIFTI and with the run_* scripts. To run tcsh scripts type (e.g.) the following into the terminal: tcsh run_13_aw.tcsh
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-## dcm2bids
-How to get started is explained here: https://unfmontreal.github.io/Dcm2Bids/3.1.1/
-
-But to give a brief overview:
-- !Use '-h' as an options for the commands to view all options and their explanations!
-- first run 'dcm2bids_scaffold', this command will create empty folders for the bids structure such as code (for the config file you will create later), sourcedata, etc.
-- move your DICOM data into the sourcedata folder; it is fine to copy entire directories, does not need to be raw unordered dicoms 
-- run 'dcm2bids_helper', this command creates json files that you can extract information from to create a config file. This step has to be done manually as you need to find unique identifiers for 
-  the different NIFTI files you want to create. Three exemplary config files are provided and labeled according to their corresponding data
-- after you manually created your config file, you run 'dcm2bids' where you specify the created config file among others. this command creates the final bids structure in the directory you specified
-  and converts the Dicom files to NIFTI files
-
-The script 'dcm2bids_scaffold_helper.tcsh' runs dcm2bids_scaffold and dcm2bids_helper. the script 'dcm2bids_conv' is an example of a dcm2bids command which creates the bids structure and then moves the bids directory to the data_basic folder where the analysis with the run_* scripts continues.
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-## Requirements
-For the scripts to work you need basic data with anatomical and functional scans which are ordered in the bids structure with a separation into sessions.
-Atlas and template, provided in the MACAQUE_DEMO to copy into the directory one above 'scripts' (NMT_v2.1_sym; you will need the whole folder).
-dcm2bids installed with conda, afni version 24.0.12 or newer, Python matplotlib.pyplot
-
-https://www.hostinger.com/tutorials/how-to-install-anaconda-on-ubuntu/
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Instructions with Linus20230704 as an example
-
-- Copy the 'scripts' folder from github: rs-fMRI-afni-macaque
-- run the script 'dcm2bids_scaffold_helper.tcsh'
-- put dicom data into the 'sourcedata' directory
-- put the config file into the /bids_structure/code (in case of Linus20230704 you need one config file for every session, hence why there are two config files for that dataset)
-- run 'dcm2bids_conv'
-- copy the NMT_v2.1_sym folder into the directory one above scripts 
-- run 'run_all.tcsh'
-
-If you want to use any other dataset, modify the paths in these scripts: dcm2bids_scaffold_helper, dcm2bids_conv, all of the do_* and run_* scripts 
