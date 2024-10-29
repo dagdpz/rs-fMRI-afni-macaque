@@ -1,7 +1,7 @@
 # rs-fMRI-afni-macaque
 Resting state fMRI analysis using MACAQUE_DEMO in AFNI
 
-Initial version by Pascal G. (deleted by Tabea B and replaced with Tabea B. version)
+Initial version by Pascal G. (deleted by Tabea B and replaced with version of Tabea B which includes a part of Pascals script (Description/Data))
 Further developed by Tabea B.
 
 # **dcm2bids_convertingTB.tcsh**
@@ -10,19 +10,18 @@ Further developed by Tabea B.
 
 a) Usage of this script
 
-This script is made to convert DICOMS to BIDS format to use them further in other programs. It is made so that the user only have to run this script once and the user got commands via the standard input and should insert something via standard input.
+This script is designed to convert DICOM files to the BIDS format, allowing for further use in other programs. It is set up so that the user only needs to run it once. Commands are provided via standard output, and the user is prompted to enter input as needed.
 
 b) Data
 
-The data used with these scripts is from the German Primate Center (DAG, Pinocchio/Linus). They are resting state recordings of an anesthetized monkey that were separated into two sessions (predrug and postdrug). 
-A drug was applied to inhibit the resting state activity of the pulvinar in the right hemisphere. With these scripts we determined if there is a difference 
-in the resting state activity of the whole brain when comparing the two different conditions.
+The data used with these scripts is from the German Primate Center (DAG, Pinocchio/Linus). They are resting state recordings of anesthetized monkeys that were separated into two sessions (predrug and postdrug). 
+A drug was applied to inhibit the resting state activity of the pulvinar in the right hemisphere.
 
 ## Installation
 
-To run this script you have to make sure that you installed the following programs (instructions are for linux):
+To run this script you have to make sure that you installed the following programs (instructions are for Linux):
 
-a) install 'Anaconda' (source: https://www.hostinger.com/tutorials/how-to-install-anaconda-on-ubuntu/)
+a) Install 'Anaconda' (source: https://www.hostinger.com/tutorials/how-to-install-anaconda-on-ubuntu/)
 
     1) sudo apt-get update
     2) apt-get install wget
@@ -30,33 +29,33 @@ a) install 'Anaconda' (source: https://www.hostinger.com/tutorials/how-to-instal
     4) sha256sum Anaconda3-2022.05-Linux-x86_64.sh
     5) bash Anaconda3-2022.05-Linux-x86_64.sh
 
-b) dcm2bids and dcm2niix with conda. You have to create an environment called "dcm2bids" in which you install dcm2bids and dcm2niix. Running the script, you have to be in this environment.
+b) Install dcm2bids and dcm2niix with conda. You have to create an environment called "dcm2bids" in which you install dcm2bids and dcm2niix.
 
     1) conda create --name dcm2bids python=3.8
     2) conda activate dcm2bids
     3) conda install -c conda-forge dcm2niix
     4) conda install -c conda-forge dcm2bids
     
-c) Put script in your current environment
+c) Place the script in your current working environment.
  
     1) sudo cp /path/to/your/script.sh /usr/local/bin
     2) chmod +x /path/to/your/script.sh
     3) run with tcsh script.tcsh
     
-d) copy folder with DICOM data into home directory
+d) Copy folder with DICOM data into home directory
 
     1) cp /path/to/DICOMs /home/directory
 
 d) Running script
 
-* to run this script you have to be in the dcm2bids environment which you activate by command 'conda activate dcm2bids' and you have to be in pathway of folder where you want the bidsified data to be (cd path/to/folder).
-* run it with command 'tcsh dcm2bids_convertingTB.tcsh'
+* To run this script you have to be in the dcm2bids environment which you activate by command 'conda activate dcm2bids' and you have to be in pathway of folder where you want the BIDS-converted data to be (cd path/to/folder).
+* Run it with command 'tcsh dcm2bids_convertingTB.tcsh'
 
-## Examples
+## Example
 
-this example is based on the data of this tutorial: https://unfmontreal.github.io/Dcm2Bids/3.1.1/tutorial/first-steps/
+This example is based on the data of this tutorial: https://unfmontreal.github.io/Dcm2Bids/3.1.1/tutorial/first-steps/
 
-when I ran script, this is the output; words which are surrounded with '*' were inserted by myself via standard input:
+When I ran script, this is the output; words which are surrounded with '*' were inserted by myself via standard input:
 
 ```
 The script will proceed through the following steps to ensure you know where potential issues may arise:
