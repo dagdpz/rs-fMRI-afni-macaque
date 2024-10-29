@@ -52,6 +52,7 @@ echo "(2/5) Generating sidecar files in the 'helper' folder with dcm2bids_helper
 dcm2bids_helper -d "$MY_PATH"
 
 #Prompt the user to add the configuration file
+echo "  "
 echo "Please add the configuration file to the 'code' folder."
 echo "Once you have done that and want the code to continue, press 'y'."
 echo "If you want to abort, press 'n'."
