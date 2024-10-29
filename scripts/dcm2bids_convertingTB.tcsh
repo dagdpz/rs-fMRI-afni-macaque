@@ -19,8 +19,8 @@ setenv MY_FILE "$user_input"
 
 # Locate the specified folder
 set My_path = `find ~ -type d -name "$MY_FILE" -print -quit`
-echo " This pathway is used in the following: $My_path "
-echo " Please make sure that this is really the pathway which should be used (you can abort script by 'Ctrl C')"
+echo "This pathway is used in the following: $My_path "
+echo "Please make sure that this is really the pathway which should be used (you can abort script by 'Ctrl C')"
 
 # Set My_path as an environment variable so it is also available outside the script
 setenv MY_PATH "$My_path"
