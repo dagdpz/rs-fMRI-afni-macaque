@@ -32,6 +32,7 @@ a) Install 'Anaconda' (source: https://www.hostinger.com/tutorials/how-to-instal
     3) wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
     4) sha256sum Anaconda3-2022.05-Linux-x86_64.sh
     5) bash Anaconda3-2022.05-Linux-x86_64.sh
+    6) source ~/.bashrc
 
 b) Install dcm2bids and dcm2niix with conda. You have to create an environment called "dcm2bids" in which you install dcm2bids and dcm2niix.
 
