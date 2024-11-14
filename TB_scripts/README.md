@@ -1,5 +1,5 @@
 # **TB_scripts**
-In this folder you can find all scripts which were created by Tabea Bruening during her work for her bachelor thesis which are converting DICOM data into the BIDS structure and analyse the data. Every folder contains specific README files which are describing the usage of the scripts/instructions for the installation/examples and a lot more details.
+In this folder you can find all scripts which were created by Tabea Bruening during her work for her bachelor thesis. The scripts in general are converting DICOM data into the BIDS structure and analyse the data. Every folder contains specific README files which are describing the usage of the scripts/instructions for the installation/examples and a lot more details.
 The following section 'script-organization' provides general informations about every folder, its containing scripts and the differences. If you would like to run specific scripts, you can just go into the folder and read the instructions in the README file there.
 
 ## **script-organization**
