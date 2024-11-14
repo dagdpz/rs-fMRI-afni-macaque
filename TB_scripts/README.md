@@ -1,6 +1,6 @@
 # **TB_scripts**
-In this folder you can find all scripts which are created by Tabea Bruening during her work for her bachelor thesis. Every folder contains specific README files which are describing the usage of the scripts/Instructions for the Installation/Examples and a lot more details.
-The following section 'script-organization' provides informations about every folder, its containing scripts and the differences.
+In this folder you can find all scripts which were created by Tabea Bruening during her work for her bachelor thesis. Every folder contains specific README files which are describing the usage of the scripts/Instructions for the Installation/Examples and a lot more details.
+The following section 'script-organization' provides general informations about every folder, its containing scripts and the differences. If you would like to run specific scripts, you can just go into the folder and read the instructions of the README file there.
 
 ## **script-organization**
 
