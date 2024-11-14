@@ -8,7 +8,6 @@
 # ---------------------------------------------------------------------------
 # top level definitions (constant across demo)
 # ---------------------------------------------------------------------------
- echo "In run_13_aw.tcsh, NAME_BIDS is: $NAME_BIDS"
 # labels
 set subj           = $1
 set ses            = $2
