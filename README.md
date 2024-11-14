@@ -3,7 +3,7 @@ Resting state fMRI analysis using MACAQUE_DEMO in AFNI
 
 * Initial version by Pascal G. (see below 'TB_scripts')
 * Further developed by Tabea B. (TB_scripts)
-* 
+  
 # **TB_scripts**
 
 * This folder contains all scripts which were created by Tabea Bruening during her work for her bachelor thesis. This folder provides README files for every script.
