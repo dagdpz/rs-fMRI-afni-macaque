@@ -16,7 +16,7 @@ b) **TB_scripts_analysing_wnewrunall**
 * Contains scripts for analysing BIDS data
 * Scripts for 3mm smoothing, without smoothing and for individual runs
 * Each run\_all.tcsh script provides commands for the user to insert names or to copy a folder into the directory
-* Difference to run\_all.tcsh scripts from TB\_scripts_analysing : User can choose if he/she want the script to carry out a voxel-based, ROI-based or both types of analysis
+* Difference to run\_all.tcsh scripts from TB\_scripts_analysing : User can choose if he/she wants the script to carry out a voxel-based, ROI-based or both types of analysis
 
 c) **TB_scripts_dcm2bids**
 
@@ -33,7 +33,7 @@ e) **TB_scripts_dcm2bids_preandpostdrug_2config**
 
 * Contains script which converts DICOM data into BIDS structure
 * Provides commands for user to insert names
-* Difference to TB_scripts_dm2bids: script suppose that you have two configuration files with two different sessions and folder in which this data is
+* Difference to TB_scripts_dm2bids: script supposes that you have two configuration files with two different sessions and folders in which this data is
 
 f) **TB_scripts_analysing_runall_withbreak**
 
