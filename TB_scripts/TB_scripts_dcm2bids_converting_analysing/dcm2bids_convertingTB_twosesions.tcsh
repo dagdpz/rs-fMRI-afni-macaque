@@ -128,6 +128,32 @@ echo "(5/5) Demonstrating the BIDS directory structure to verify the results"
 #Verification of the BIDS structure
 tree sub-"$MY_ID"/
 
+#Move BIDS structure into another folder
+mkdir ${PWD}/data_BIDS
+mv sub-"$MY_ID" data_BIDS
+
+#Prompt the user to decide if script should continue with analysing data
+echo "Do you want me to continue with analysing the data?"
+echo "If you want me to do this, copy the specific 'scripts' folder in the pathway from which you ran this script and press 'y'"
+echo "If you don't want me to do this, press 'n'"
+
+# Wait for user input
+set user_input = "$<"
+
+#Decision based on user input
+if ( "$user_input" == "y" ) then
+    echo "Continuing..."
+    echo "  "
+    cd scripts/
+    tcsh run_all.tcsh
+else if ( "$user_input" == "n" ) then
+    echo "Aborting..."
+    exit 1  # The script will abort
+else
+    echo "Invalid input. Please restart the script."
+    exit 1  # Script aborts on invalid input
+endif
+    
 
 
 
