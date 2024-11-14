@@ -30,17 +30,18 @@ d) **TB_scripts_dcm2bids**
 
 * Contains script which converts DICOM data into BIDS structure
 * Provides commands for user to insert names
-
-e) **TB_scripts_dcm2bids_converting_analysing**
-
-* Contains script which converts DICOM data into BIDS structure
-* Provides commands for user to insert names
-* Difference to TB\_scripts\_dcm2bids: user can decide via standard input if script should continue with analysis (start run_all)
-
-f) **TB_scripts_dcm2bids_preandpostdrug_2config**
+* 
+e) **TB_scripts_dcm2bids_preandpostdrug_2config**
 
 * Contains script which converts DICOM data into BIDS structure
 * Provides commands for user to insert names
 * Difference to TB_scripts_dm2bids: script supposes that you have two configuration files with two different sessions and folders in which this data is
+
+f) **TB_scripts_dcm2bids_converting_analysing**
+
+* Contains script which converts DICOM data into BIDS structure
+* Provides commands for user to insert names
+* Difference to TB\_scripts\_dcm2bids and TB\_scripts\_dcm2bids\_preandpostdrug\_2config: user can decide via standard input if script should continue with analysis (start run_all)
+
 
 
