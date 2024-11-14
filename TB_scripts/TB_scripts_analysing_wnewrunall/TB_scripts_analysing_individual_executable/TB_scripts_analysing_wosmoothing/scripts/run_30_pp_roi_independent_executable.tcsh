@@ -15,6 +15,12 @@ echo "This name is used in the following: "${NAME_BIDS}""
 
 setenv NAME_BIDS "$NAME_BIDS"
 
+echo "Please insert the name of the folder with the results from the ROI-based analysis (run_22)"
+set NAME_ROI = $<
+echo "This name is used in the following: "${NAME_ROI}""
+
+setenv NAME_ROI "$NAME_ROI"
+
 # specify script to execute
 set cmd           = 30_pp_roi_independent_executable
 
