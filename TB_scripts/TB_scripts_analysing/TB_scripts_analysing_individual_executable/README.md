@@ -54,7 +54,10 @@ When I ran script, this is the output; words which I surrounded afterwards with 
 Please insert name of BIDS folder
 *In*
 This name is used in the following In
-
+Please insert the name of the folder with the results from the ROI-based analysis (run_22)
+Please leave out the 'data_'
+*22_roi*
+This name is used in the following: 22_roi
 ...
 ```
 
