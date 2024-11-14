@@ -12,7 +12,7 @@
 # labels
 set subj           = $1
 set ses            = $2
-set ap_label       = 22_ap_roi_independent_executable
+set ap_label       = "${NAME_ROI}"
 set pp_label       = 30_pp_roi_independent_executable
 
 # upper directories
