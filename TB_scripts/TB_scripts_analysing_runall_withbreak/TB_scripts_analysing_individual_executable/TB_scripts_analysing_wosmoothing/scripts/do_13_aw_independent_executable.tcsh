@@ -19,7 +19,7 @@ set dir_log        = ${dir_inroot}/logs
 set dir_ref        = ${dir_inroot}/NMT_v2.1_sym/NMT_v2.1_sym_05mm
 
 set dir_basic      = ${dir_inroot}/"$NAME_BIDS"
-set dir_aw         = ${dir_inroot}/data_13_aw_independent_executable
+set dir_aw         = ${dir_inroot}/data_13_aw
 
 # subject directories
 set sdir_basic     = ${dir_basic}/${subj}/${ses}
