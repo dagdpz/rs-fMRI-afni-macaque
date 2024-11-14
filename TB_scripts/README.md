@@ -23,7 +23,7 @@ c) **TB_scripts_analysing_runall_withbreak**
 * Contains scripts for analysing BIDS data
 * Scripts for 3mm smoothing, without smoothing and for individual runs
 * Each run\_all.tcsh script provides commands for the user to insert names or to copy a folder into the directory
-* User can choose if he/she want the script to carry out a voxel-based, ROI-based or both types of analysis
+* User can choose if he/she wants the script to carry out a voxel-based, ROI-based or both types of analysis
 * Difference to TB\_scripts\_analysing\_wneweunall : I implemented a break between run\_13_aw.tcsh and following analysing scripts in which user is asked to check the results from the skull stripping. The exact name of the file which should be checked and the way to it is provided. The user can confirm it with a keyboard shortcut or they can abort the script.
   
 d) **TB_scripts_dcm2bids**
