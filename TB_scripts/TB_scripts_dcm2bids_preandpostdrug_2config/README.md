@@ -1,9 +1,3 @@
-# rs-fMRI-afni-macaque
-Resting state fMRI analysis using MACAQUE_DEMO in AFNI
-
-* Initial version by Pascal G. (see below 'dcm2bids_convertingTB.tcsh')
-* Further developed by Tabea B. (dcm2bids_convertingTB.tcsh)
-
 # **dcm2bids_convertingTB.tcsh**
 
 ## Description:
