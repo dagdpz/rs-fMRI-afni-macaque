@@ -10,7 +10,7 @@ Resting state fMRI analysis using MACAQUE_DEMO in AFNI
 
 a) Usage of this script
 
-This script is designed to convert DICOM files to the BIDS format, allowing for further use in other programs. It is set up so that the user only needs to run it once. Commands are provided via standard output, and the user is prompted to enter input as needed.
+This script is designed to convert DICOM files to the BIDS format, allowing for further use in other programs. It is set up so that the user only needs to run it once. Commands are provided via standard output, and the user is prompted to enter input as needed. This script suppose that the user have two sessions whichs DICOM data is in two different folders.
 
 b) Data
 
