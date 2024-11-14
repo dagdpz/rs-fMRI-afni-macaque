@@ -30,7 +30,7 @@ d) **TB_scripts_dcm2bids**
 
 * Contains script which converts DICOM data into BIDS structure
 * Provides commands for user to insert names
-* 
+  
 e) **TB_scripts_dcm2bids_preandpostdrug_2config**
 
 * Contains script which converts DICOM data into BIDS structure
