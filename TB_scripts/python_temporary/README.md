@@ -1,4 +1,4 @@
-# python scripts
+# Histogramm.ipynb
 
 ## Description
 a) Usage of this code
