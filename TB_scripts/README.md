@@ -42,7 +42,9 @@ f) **TB_scripts_dcm2bids_converting_analysing**
 * Contains script which converts DICOM data into BIDS structure
 * Provides commands for user to insert names
 * Difference to TB\_scripts\_dcm2bids and TB\_scripts\_dcm2bids\_preandpostdrug\_2config: user can decide via standard input if script should continue with analysis (start run_all)
+
 e) **Python_scripts**
+
 * contains script which analyse the data of run_30 further
 
 
