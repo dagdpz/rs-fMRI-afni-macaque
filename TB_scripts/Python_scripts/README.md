@@ -1,4 +1,4 @@
-# Histogramm.ipynb
+# Histogram.ipynb
 
 ## Description
 a) **Usage of this code**
