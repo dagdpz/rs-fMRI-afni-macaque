@@ -30,7 +30,7 @@ Example:
 
 file_predrug = "MYFILESNAME.txt"  → file_predrug = "YOURFILENAME.txt"
 
-Make sure that your files have a differnet name.
+Make sure that your files have different names.
 
 ## Authors
 * Tabea Bruening
