@@ -9,7 +9,7 @@ This script is similar to the script 'dcm2bids_convertingTB.tcsh' with the excep
 b) Data
 
 The data used with these scripts is from the German Primate Center (DAG, Pinocchio/Linus). They are resting state recordings of anesthetized monkeys that were separated into two sessions (predrug and postdrug). 
-A drug was applied to inhibit the resting state activity of the pulvinar in the right hemisphere.
+A drug was applied to inhibit the resting state activity of the pulvinar in the left hemisphere.
 
 c) Supplementary informations
 
