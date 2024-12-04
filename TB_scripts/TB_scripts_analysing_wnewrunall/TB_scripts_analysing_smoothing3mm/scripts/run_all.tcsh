@@ -53,7 +53,7 @@ echo "If you want to just go on with the analysis, press 'n'."
 # Wait for user input
 set user_input = "$<"
 
-#Prompt the user to choose if they would like their anatomical data to be changed
+#Prompt the user to choose between analysis types
 echo "  "
 echo "In the following you can choose which analysis type we should conduct"
 echo "If you want us to a voxel-based analysis, type in 'vw'"
