@@ -32,12 +32,18 @@ set user_input = $<
 #Set the environment variable MY_ID with the user_input
 setenv MY_ID "$user_input"
 
+# Verification
+echo "This subject ID is used in the following: $My_ID "
+
 #Promt the user to enter the session name
 echo "Please enter the session name:"
 set user_input = $<
 
 #Set the environment variable MY_SES with the user_input
 setenv MY_SES "$user_input"
+
+# Verification
+echo "This session-name is used in the following: $My_SES "
 
 #Display progress
 echo "(1/5) Creating the initial folder structure and the scaffold with dcm2bids_scaffold"
