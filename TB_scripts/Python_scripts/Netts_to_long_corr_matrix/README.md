@@ -8,7 +8,7 @@ This script is created to convert the data of the .netss file from run_30 (AFNI)
 
 When extracting the time series data of each ROI, multiple files are generated—each named according to the number of a specific ROI, as indicated in the accompanying folders of the template or atlas files. The code processes these files by replacing the numerical identifiers with their corresponding ROI abbreviations. These abbreviations are then also used in the long-format correlation matrix. For example, the ROI CL_ACC is associated with the number 3.
 
-In this code, initially, the user have to insert the name of the text files possesing their data of the correlation matrix. Then, they have to crete a name for the later CSV file. With the data of the correlation matrix, the code is extracting the number of rois being compared and the headerline. With this information, it can match the ROIs to the specific columns and lines as in the code for generating histograms. Then, the CSV files are created.
+In this code, initially, the user have to insert the name of the text files possesing their data of the correlation matrix. Then, they have to crete a name for the later CSV file. With the data of the correlation matrix, the code is extracting the number of ROIs being compared and the headerline. With this information, it can match the ROIs to the specific columns and lines as in the code for generating histograms. Then, the CSV files are created.
 
 **b) Data**
 
