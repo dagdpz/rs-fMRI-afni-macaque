@@ -38,7 +38,7 @@ tcsh chauffeur.tcsh
 
 ## Example
 
-This is the example output from this code: 
+This is the example output from this code (here: axial slice): 
 
 ![AFNI Visualisierung](images/afni_output.png)
 
