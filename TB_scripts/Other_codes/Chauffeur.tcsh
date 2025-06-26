@@ -7,7 +7,7 @@
 
 @chauffeur_afni                                                     \
         -ulay    NMT_v2.1_sym_05mm_SS.nii.gz'[0]'                   \
-        -olay    CHARM_in_NMT_v2.1_sym_05mm.nii.gz'[5]'            \
+        -olay    CHARM_in_NMT_v2.1_sym_05mm.nii.gz'[5]'             \
         -prefix  Visualisation_CHARM                                \
         -montx   5 -monty 3                                         \
         -set_xhairs OFF                                             \
