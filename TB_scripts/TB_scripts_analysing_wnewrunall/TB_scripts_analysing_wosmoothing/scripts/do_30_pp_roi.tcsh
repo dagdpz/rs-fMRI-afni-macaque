@@ -142,7 +142,7 @@ foreach ff ( ${ref_atl} )
         -input         "${ff}"                \
         -rmode          NN                    \
         -master         ${errts}              \
-        -prefix         ${epi_atl}
+        -prefix         ${epi_atl}            
 
     if ( $status ) then
         echo "** ERROR: failed to resample '${ff}' for ${subj}"
@@ -165,7 +165,8 @@ foreach ff ( ${ref_atl} )
         -fish_z                                 \
         -inset   ${errts}                       \
         -in_rois ${epi_atl}                     \
-        -prefix  ${onet}
+        -prefix  ${onet}                        \
+        -ts_indiv                      # this is generating the time-series data output
 
     if ( $status ) then
         echo "** ERROR: failed after 3dNetCorr for ${subj}"
