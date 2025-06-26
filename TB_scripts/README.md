@@ -47,6 +47,9 @@ e) **Python_scripts**
 
 * contains script which analyse the data of run_30 further
 
+f) **Other_codes**
+
+* contains other scripts, I generated and used for the thesis work
 
 
 
