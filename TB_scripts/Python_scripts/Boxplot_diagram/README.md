@@ -11,9 +11,11 @@ The code 'boxplot.ipynb' is creating boxplot diagrams for one hemisphere either 
 
 The code 'boxplot_with_seperate_comparison_prepostdrug.ipynb' has an extra feature which creates a boxplotdiagram, comparing results within one hemisphere for both pre and postdrug data.
 
+The code 'boxplot_new.ipynb' is similar to 'boxplot.ipynb', but it contains the final boxplots along with the statistical tests used in my thesis.
+
 **b) Data**
 
-The data used with these scripts is from the German Primate Center (DAG, Pinocchio/Linus). They are resting state recordings of anesthetized monkeys that were separated into two sessions (predrug and postdrug). A drug was applied to inhibit the resting state activity of the pulvinar in the left hemisphere.
+The data used with these scripts is from the German Primate Center (DAG, Pinocchio/Linus/Rio/Norman/Curius). They are resting state recordings of anesthetized monkeys that were in one dataset of one monkey separated into two sessions (predrug and postdrug). A drug was applied to inhibit the resting state activity of the pulvinar in the left hemisphere.
 
 **c) Supplementary informations**
 
