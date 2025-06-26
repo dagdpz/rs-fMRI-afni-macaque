@@ -21,6 +21,10 @@ This script is designed to display the medial pulvino-cortical correlation value
 
 This script visualizes the medial pulvino-cortical correlation patterns before and after drug injection, and includes statistical analyses.
 
+*Line_plot_detail_inactivation.ipynb*
+
+This code generates line plots showing the pulvino-cortical correlation values for each pulvinar subdivision in both hemispheres.
+
 **b) Data**
 
 The data used with these scripts is from the German Primate Center (DAG, Pinocchio/Linus/Rio/Norman/Curius). They are resting state recordings of anesthetized monkeys that were in one monkeys datatset separated into two sessions (predrug and postdrug). A drug was applied to inhibit the resting state activity of the pulvinar in the left hemisphere.
