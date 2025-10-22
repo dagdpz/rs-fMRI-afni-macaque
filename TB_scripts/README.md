@@ -2,6 +2,35 @@
 In this folder you can find all scripts which were created by Tabea Bruening during her work for her bachelor thesis. The scripts in general are converting DICOM data into the BIDS structure and analyse the data. Every folder contains specific README files which are describing the usage of the scripts/instructions for the installation/examples and a lot more details.
 The following section 'script-organization' provides general informations about every folder, its containing scripts and the differences. If you would like to run specific scripts, you can just go into the folder and read the instructions in the README file there.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**To successfully process MRI data, follow these steps:**
+
+*Convert DICOM to BIDS format:*
+Use the TB_scripts_dcm2bids to convert your DICOM files into the standard BIDS structure (including conversion to NIfTI format).
+Further details about how these scripts work can be found in section c).
+
+*Prepare the analysis directory:*
+Create a new directory containing:
+
+- The BIDS-formatted DICOM files
+
+- The analysis scripts (see sections a, b, and c)
+
+- The NMT template
+
+*Run the analysis scripts:*
+Execute the scripts from within this directory (see sections a, b, and c for details).
+The scripts will generate several intermediate outputs, such as the skull-stripped MRI images.
+
+*Final output:*
+The last generated file (as described in a, b, and c) contains the analyzed data — including time series and correlation matrices comparing brain regions at six different resolutions.
+
+*Further analysis*
+The Python scripts (see g) can be used to further analyze the correlation patterns generated in the previous steps.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## **script-organization**
 
 a) **TB_scripts_analysing**
