@@ -26,7 +26,7 @@ The scripts will generate several intermediate outputs, such as the skull-stripp
 *Final output:*
 The last generated file (as described in a, b, and c) contains the analyzed data — including time series and correlation matrices comparing brain regions at six different resolutions.
 
-*Further analysis*
+*Further analysis:*
 The Python scripts (see g) can be used to further analyze the correlation patterns generated in the previous steps.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
